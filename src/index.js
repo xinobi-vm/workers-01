@@ -10,6 +10,12 @@
 
 export default {
 	async fetch(request, env, ctx) {
-		return new Response('Hello World!');
+		// console.log(JSON.stringify(request.cf, null, 4));
+		// Examples of Request
+		// process input from the request
+		// Database request
+		return new Response(JSON.stringify(request.cf, null, 4), {
+			headers: { 'content-type': 'application/json' },
+		});
 	},
 };
